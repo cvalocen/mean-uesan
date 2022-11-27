@@ -10,7 +10,8 @@ export class AppComponent {
   title = "DPA";
   age: Number = 30;
   fullName: String = "Claudia Alocen";
-
+  customers: any;
+  
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
@@ -23,6 +24,7 @@ export class AppComponent {
       )
       .subscribe((response) => {
         console.log(response);
+        this.customers = response;
       });
   }
 }
